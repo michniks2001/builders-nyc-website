@@ -457,39 +457,51 @@ function MotionNavigationMenuTrigger({
   const isOpen = !!value && context?.activeValue === value;
 
   return (
-    <HighlightItem render={<button type="button" data-slot="navigation-menu-trigger" data-state={isOpen ? "open" : "closed"} aria-expanded={isOpen} className={cn(motionNavigationMenuTriggerStyle(), "group", className)} onPointerEnter={(event) => {
-                onPointerEnter?.(event);
-
-                if (value) {
-                  context?.openValue(value);
-                }
-              }} onFocus={(event) => {
-                onFocus?.(event);
-
-                if (value) {
-                  context?.openValue(value);
-                }
-              }} onClick={(event) => {
-                onClick?.(event);
-
-                if (value) {
-                  context?.openValue(value);
-                }
-              }} {...props} />}>{children}{" "}<motion.span
-                aria-hidden="true"
-                animate={{
-                  rotate: isOpen ? 180 : 0,
-                  y: isOpen ? 1 : 0,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 20,
-                }}
-                className="relative top-0 ml-1.5 inline-flex"
-              >
-                <ChevronDownIcon className="size-3.5 stroke-2.5" aria-hidden="true" />
-              </motion.span></HighlightItem>
+    <HighlightItem asChild>
+      <button
+        type="button"
+        data-slot="navigation-menu-trigger"
+        data-state={isOpen ? "open" : "closed"}
+        aria-expanded={isOpen}
+        className={cn(motionNavigationMenuTriggerStyle(), "group", className)}
+        onPointerEnter={(event) => {
+          onPointerEnter?.(event);
+          if (value) {
+            context?.openValue(value);
+          }
+        }}
+        onFocus={(event) => {
+          onFocus?.(event);
+          if (value) {
+            context?.openValue(value);
+          }
+        }}
+        onClick={(event) => {
+          onClick?.(event);
+          if (value) {
+            context?.openValue(value);
+          }
+        }}
+        {...props}
+      >
+        {children}{" "}
+        <motion.span
+          aria-hidden="true"
+          animate={{
+            rotate: isOpen ? 180 : 0,
+            y: isOpen ? 1 : 0,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 20,
+          }}
+          className="relative top-0 ml-1.5 inline-flex"
+        >
+          <ChevronDownIcon className="size-3.5 stroke-2.5" aria-hidden="true" />
+        </motion.span>
+      </button>
+    </HighlightItem>
   );
 }
 
@@ -708,10 +720,16 @@ function MotionNavigationMenuLink({
   ...props
 }: React.ComponentPropsWithRef<"a">) {
   return (
-    <HighlightItem render={<a data-slot="navigation-menu-link" className={cn(
-                "data-[active=true]:text-accent-foreground hover:text-accent-foreground focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-colors outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
-                className,
-              )} {...props} />}></HighlightItem>
+    <HighlightItem asChild>
+      <a
+        data-slot="navigation-menu-link"
+        className={cn(
+          "data-[active=true]:text-accent-foreground hover:text-accent-foreground focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-colors outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
+          className,
+        )}
+        {...props}
+      />
+    </HighlightItem>
   );
 }
 

@@ -79,7 +79,10 @@ export function InterestForm() {
         <Field>
           <FieldLabel htmlFor="role">I am a</FieldLabel>
           <FieldContent>
-            <Select value={role} onValueChange={setRole}>
+            <Select
+              value={role || null}
+              onValueChange={(value) => setRole(value ?? "")}
+            >
               <SelectTrigger
                 id="role"
                 className="h-11 w-full rounded-2xl border-[#fcdf03]/75 bg-[#fffdf1]/95 shadow-[0_10px_20px_-18px_rgba(252,223,3,0.9)] transition-shadow focus-visible:shadow-[0_14px_26px_-18px_rgba(252,140,3,0.95)]"

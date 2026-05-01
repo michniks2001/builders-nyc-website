@@ -1,0 +1,83 @@
+<svg width="360" height="160" viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Builders NYC Logo -->
+
+  <!-- B Circle -->
+  <circle cx="42" cy="48" r="30" fill="#fc8c03" />
+
+  <!-- B Letter -->
+  <text
+    x="42"
+    y="51"
+    text-anchor="middle"
+    dominant-baseline="middle"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="42"
+    font-weight="700"
+    fill="#ffffff"
+  >
+    B
+  </text>
+
+  <!-- "uilders" Text -->
+  <text
+    x="76"
+    y="62"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="42"
+    font-weight="700"
+    fill="#111111"
+  >
+    uilders
+  </text>
+
+  <!-- NYC Group offset underneath the "i" in Builders -->
+  <g transform="translate(102, 90)">
+    <!-- N Circle -->
+    <circle cx="0" cy="0" r="22" fill="#fcdf03" />
+
+    <!-- N Letter -->
+    <text
+      x="0"
+      y="2"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      font-family="Arial, Helvetica, sans-serif"
+      font-size="30"
+      font-weight="700"
+      fill="#111111"
+    >
+      N
+    </text>
+
+    <!-- Y Letter -->
+    <text
+      x="33"
+      y="2"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      font-family="Arial, Helvetica, sans-serif"
+      font-size="30"
+      font-weight="700"
+      fill="#111111"
+    >
+      Y
+    </text>
+
+    <!-- C Circle -->
+    <circle cx="67" cy="0" r="22" fill="#0404d4" />
+
+    <!-- C Letter -->
+    <text
+      x="67"
+      y="2"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      font-family="Arial, Helvetica, sans-serif"
+      font-size="30"
+      font-weight="700"
+      fill="#ffffff"
+    >
+      C
+    </text>
+  </g>
+</svg>
